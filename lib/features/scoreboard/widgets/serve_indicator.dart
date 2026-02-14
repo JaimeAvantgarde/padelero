@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:padelero/shared/constants.dart';
 
 class ServeIndicator extends StatelessWidget {
   const ServeIndicator({
@@ -12,15 +14,30 @@ class ServeIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isServing = (servingTeam == 1 && isTeam1) || (servingTeam == 2 && !isTeam1);
+    final isServing =
+        (servingTeam == 1 && isTeam1) || (servingTeam == 2 && !isTeam1);
     if (!isServing) return const SizedBox.shrink();
-    return Container(
-      padding: const EdgeInsets.all(6),
-      decoration: const BoxDecoration(
-        color: Color(0xFF1A73E8),
-        shape: BoxShape.circle,
-      ),
-      child: const Icon(Icons.sports_tennis, color: Colors.white, size: 20),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 10,
+          height: 10,
+          decoration: const BoxDecoration(
+            color: AppColors.accent,
+            shape: BoxShape.circle,
+          ),
+        ),
+        const SizedBox(width: 6),
+        Text(
+          'Saca',
+          style: GoogleFonts.manrope(
+            fontSize: 13,
+            fontWeight: FontWeight.w700,
+            color: AppColors.accent,
+          ),
+        ),
+      ],
     );
   }
 }

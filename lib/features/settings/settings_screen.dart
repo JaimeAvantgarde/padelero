@@ -41,7 +41,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         children: [
           // Padelero PRO (compra in-app real: Apple / Google)
           Card(
-            color: isPro ? AppColors.success.withOpacity(0.15) : AppColors.surface,
+            color: isPro ? AppColors.success.withValues(alpha: 0.15) : AppColors.surface,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(

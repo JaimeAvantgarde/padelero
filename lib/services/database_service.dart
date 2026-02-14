@@ -53,6 +53,12 @@ class DatabaseService {
     });
   }
 
+  static Future<List<Match>> getAllMatches() async {
+    final db = await instance;
+    final list = await db.query('matches', orderBy: 'date DESC');
+    return list.map(_rowToMatch).toList();
+  }
+
   static Future<List<Match>> getRecentMatches({int limit = 20}) async {
     final db = await instance;
     final list = await db.query(

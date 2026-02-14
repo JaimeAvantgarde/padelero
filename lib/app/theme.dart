@@ -50,23 +50,30 @@ ThemeData get appDarkTheme {
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Colors.white24),
+        borderSide: const BorderSide(color: Colors.white24),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: const BorderSide(color: AppColors.primary, width: 2),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      hintStyle: TextStyle(color: Colors.white54),
+      hintStyle: const TextStyle(color: Colors.white54),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.background,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white38,
+      type: BottomNavigationBarType.fixed,
+      elevation: 0,
     ),
   );
 }
 
 /// Space Mono para números del marcador (monospace).
-TextStyle scoreNumberStyle(double size) {
+TextStyle scoreNumberStyle(double size, {Color color = Colors.white}) {
   return GoogleFonts.spaceMono(
     fontSize: size,
     fontWeight: FontWeight.bold,
-    color: Colors.white,
+    color: color,
   );
 }

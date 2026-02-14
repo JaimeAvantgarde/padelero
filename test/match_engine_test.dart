@@ -382,8 +382,8 @@ void main() {
     group('Set point / Match point', () {
       test('set point at 5-4 for leading team', () {
         final engine = MatchEngine(config: const MatchConfig(numberOfSets: 3));
-        for (int i = 0; i < 5; i++) _winGame(engine, 1);
-        for (int i = 0; i < 4; i++) _winGame(engine, 2);
+        for (int i = 0; i < 5; i++) { _winGame(engine, 1); }
+        for (int i = 0; i < 4; i++) { _winGame(engine, 2); }
         // 5-4: team 1 has set point
         expect(engine.isSetPointFor(1), true);
         expect(engine.isSetPointFor(2), false);
@@ -403,7 +403,7 @@ void main() {
         final engine = MatchEngine(config: const MatchConfig(numberOfSets: 3));
         _winSet60(engine, 1); // Won 1 set, need 2
         // At 5-0 in second set → match point
-        for (int i = 0; i < 5; i++) _winGame(engine, 1);
+        for (int i = 0; i < 5; i++) { _winGame(engine, 1); }
         expect(engine.isMatchPointFor(1), true);
         expect(engine.isMatchPointFor(2), false);
       });

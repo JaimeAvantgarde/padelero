@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:padelero/app/theme.dart';
 import 'package:padelero/features/scoreboard/match_engine.dart';
+import 'package:padelero/shared/constants.dart';
 
 class ScoreDisplay extends StatelessWidget {
   const ScoreDisplay({
     super.key,
     required this.engine,
     this.animate = false,
+    this.team1Color = AppColors.team1,
+    this.team2Color = AppColors.team2,
   });
 
   final MatchEngine engine;
   final bool animate;
+  final Color team1Color;
+  final Color team2Color;
 
   @override
   Widget build(BuildContext context) {
@@ -25,25 +30,26 @@ class ScoreDisplay extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _ScoreNumber(p1, animate),
+        _ScoreNumber(p1, animate, color: team1Color),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             '-',
-            style: scoreNumberStyle(48),
+            style: scoreNumberStyle(48, color: Colors.white54),
           ),
         ),
-        _ScoreNumber(p2, animate),
+        _ScoreNumber(p2, animate, color: team2Color),
       ],
     );
   }
 }
 
 class _ScoreNumber extends StatelessWidget {
-  const _ScoreNumber(this.text, this.animate);
+  const _ScoreNumber(this.text, this.animate, {required this.color});
 
   final String text;
   final bool animate;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +61,7 @@ class _ScoreNumber extends StatelessWidget {
           scale: animate ? value : 1,
           child: Text(
             text,
-            style: scoreNumberStyle(88),
+            style: scoreNumberStyle(88, color: color),
           ),
         );
       },

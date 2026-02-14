@@ -233,7 +233,7 @@ class _OptionChip<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     final selected = value == groupValue;
     return Material(
-      color: selected ? AppColors.primary.withOpacity(0.3) : AppColors.surface,
+      color: selected ? AppColors.primary.withValues(alpha: 0.3) : AppColors.surface,
       borderRadius: BorderRadius.circular(16),
       child: InkWell(
         onTap: () => onSelected(value),

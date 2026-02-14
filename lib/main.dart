@@ -9,9 +9,11 @@ import 'package:padelero/app/theme.dart';
 import 'package:padelero/features/settings/pro_provider.dart';
 import 'package:padelero/services/ads_service.dart';
 import 'package:padelero/services/iap_provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('es');
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

@@ -49,7 +49,7 @@ class _MatchDetailScreenState extends ConsumerState<MatchDetailScreen> {
     await DatabaseService.deleteMatch(widget.matchId);
     ref.invalidate(allMatchesProvider);
     ref.invalidate(recentMatchesProvider);
-    if (mounted) context.pop();
+    if (context.mounted) context.pop();
   }
 
   @override
