@@ -198,7 +198,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ),
             trailing: const Icon(Icons.open_in_new, color: Colors.white38, size: 18),
-            onTap: () => _openUrl('https://padelero.app/privacy'),
+            onTap: () => _openUrl('https://jaimeavantgarde.github.io/padelero/privacy-policy.html'),
           ),
           ListTile(
             leading: const Icon(Icons.description_outlined, color: Colors.white70),
