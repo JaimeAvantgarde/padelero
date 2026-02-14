@@ -183,9 +183,9 @@ Ninguno
 
 | Campo | URL |
 |-------|-----|
-| Privacy Policy | https://padelero.app/privacy |
-| Support URL | https://padelero.app/support (o email: padelero.app@gmail.com) |
-| Marketing URL | https://padelero.app |
+| Privacy Policy | https://jaimeavantgarde.github.io/padelero/privacy-policy.html |
+| Support URL | https://jaimeavantgarde.github.io/padelero/support.html |
+| Marketing URL | https://jaimeavantgarde.github.io/padelero/ |
 
 ---
 
